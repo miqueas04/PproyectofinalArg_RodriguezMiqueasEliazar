@@ -1,0 +1,37 @@
+.row{
+    padding: 20px;
+    
+}
+div{
+    background: #04437e;
+    text-align: center;
+}
+
+#nombre{
+    font-weight: bold;
+    margin-top: 10%;
+    font-size: 25px;
+}
+
+@media (min-width: 576px) {
+    #fotoperfil{
+        position: absolute;
+        width: 15%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px grey;
+        left: 3%;
+        top: 600px;
+    }
+    
+}
+@media (max-width: 575px) {
+    #fotoperfil{
+        position: absolute;
+        width: 50%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px grey;
+        left: 26%;
+        top: 580px;
+    }
+    
+}
