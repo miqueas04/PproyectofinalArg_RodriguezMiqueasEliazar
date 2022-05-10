@@ -3,7 +3,7 @@
     
 }
 div{
-    background: #04437e;
+    background: #ffffff;
     text-align: center;
 }
 
@@ -31,7 +31,7 @@ div{
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
         left: 26%;
-        top: 580px;
+        top: 900px;
     }
     
 }

@@ -1,0 +1,13 @@
+.row{
+    background: #ffffff;
+}
+footer{
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 2px -2px 5px rgb(124, 124, 124);
+
+}
