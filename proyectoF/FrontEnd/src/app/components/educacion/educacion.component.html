@@ -1,12 +1,13 @@
-<div class="row">
+<div class="row" *ngFor="let educacion of educaciones">
     <h1>Educacion</h1>
     <div class="col-lg-1"></div>
     <div class="col-lg-11">
         <ul>
             <li>
-                <h1>Estudio 1</h1> - <h3>(years)</h3>
+                <h1>{{educacion.tituloEdu}}</h1> - <h3>{{educacion.fechaEdu}}</h3>
             </li>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, deleniti aut excepturi ipsam cum quam non sapiente soluta exercitationem autem tempora ratione quibusdam repudiandae quaerat ipsa dolore amet tempore alias.</p>
+            <p>{{educacion.descEdu}}</p>
+            <p><img src="{{educacion.imagenEdu}}" ></p>
         </ul>
         <ul>
             <li>

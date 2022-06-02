@@ -34,9 +34,6 @@ public class EducacionService {
     public void borrarEducacion(Long id){
         educacionRepo.deleteById(id);
     }
-    public Educacion buscarEducacionPorId(Long id){
-        
-        return educacionRepo.findById(id).orElse(null);
-        
-    }
+
+    
 }

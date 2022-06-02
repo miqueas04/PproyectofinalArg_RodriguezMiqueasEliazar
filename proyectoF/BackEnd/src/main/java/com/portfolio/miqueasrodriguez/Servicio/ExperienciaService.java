@@ -28,7 +28,7 @@ public class ExperienciaService {
     return experienciaRepo.findAll();
     }
     
-    public Experiencia editarUsuario(Experiencia experiencia){
+    public Experiencia editarExperiencia(Experiencia experiencia){
     return experienciaRepo.save(experiencia);
     }
     

@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/model/usuario';
-import { HeaderService } from 'src/app/service/header.service';
+import { HeaderService } from 'src/app/service/acerdade.service';
 
 @Component({
   selector: 'app-acerca-de',

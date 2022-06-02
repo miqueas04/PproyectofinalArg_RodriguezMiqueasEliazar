@@ -6,8 +6,10 @@ import com.portfolio.miqueasrodriguez.Servicio.SkillsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,5 +38,15 @@ public class SkillsController {
         Skills updateSkills=skillsService.editarSkills(skills);
         return new ResponseEntity<>(updateSkills,HttpStatus.OK);
     }
+     @PostMapping("/add")
+    public ResponseEntity<Skills> crearSkills(@RequestBody Skills skills){
+        Skills nuevaSkills=skillsService.addSkill(skills);
+        return new ResponseEntity<>(nuevaSkills,HttpStatus.CREATED);
+    }
     
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> borrarSkills (@PathVariable("id")long id ){
+        skillsService.borrarSkills(id);
+         return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
