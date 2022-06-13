@@ -1,3 +1,15 @@
+<!--BOTONES-->
+<div class="botones">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#editEducacionModal">
+        Editar
+       </button>
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"  data-bs-target="#deleteEducacionModal">
+        Eliminar Educacion
+     </button>
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#addEducacionModal">
+    Añadir Educacion
+   </button>
+</div>
 <div class="row" *ngFor="let educacion of educaciones">
     <h1>Educacion</h1>
     <div class="col-lg-1"></div>
@@ -7,19 +19,194 @@
                 <h1>{{educacion.tituloEdu}}</h1> - <h3>{{educacion.fechaEdu}}</h3>
             </li>
             <p>{{educacion.descEdu}}</p>
-            <p><img src="{{educacion.imagenEdu}}" ></p>
+            <p><img src="{{educacion.imagenEdu}}"></p>
         </ul>
-        <ul>
-            <li>
-                <h1>Estudio 2</h1> - <h3>(years)</h3>
-            </li>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, deleniti aut excepturi ipsam cum quam non sapiente soluta exercitationem autem tempora ratione quibusdam repudiandae quaerat ipsa dolore amet tempore alias.</p>
-        </ul>
-        <ul>
-            <li>
-                <h1>Estudio 3</h1> - <h3>(years)</h3>
-            </li>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, deleniti aut excepturi ipsam cum quam non sapiente soluta exercitationem autem tempora ratione quibusdam repudiandae quaerat ipsa dolore amet tempore alias.</p>
-        </ul>
+    <div class="col text-center">
     </div>
 </div>
+
+
+<!---MODAL DE AÑADIR EDUCACION-->
+
+ <div class="modal fade" id="addEducacionModal" tabindex="-1" aria-labelledby="addEducacionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addEducacionModalLabel">Añadir educacion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form #addForm="ngForm"(ngSubmit)="onAddEducacion(addForm)">
+                <div class ="form-group">
+                    <label for="tituloEdu">Titulo</label>
+                    <input type="text"
+                    ngModel
+                    name="tituloEdu"
+                    class="form-control"
+                    id="tituloEdu"
+                    placeholder="Titulo"
+                    required
+                    >
+                </div>
+                <div class ="form-group">
+                 <label for="fechaEdu">Fecha</label>
+                 <input type="text"
+                 ngModel
+                 name="fechaEdu"
+                 class="form-control"
+                 id="fechaEdu"
+                 placeholder="Fecha"
+                 required
+                 >
+             </div>
+             <div class ="form-group">
+                 <label for="descEdu">Descripción</label>
+                 <input type="text"
+                 ngModel
+                 name="descEdu"
+                 class="form-control"
+                 id="descEdu"
+                 placeholder="Descripción"
+                 required
+                 >
+             </div>
+             <div class ="form-group">
+                 <label for="imagenEdu">Imagen URL</label>
+                 <input type="text"
+                 ngModel
+                 name="imagenEdu"
+                 class="form-control"
+                 id="imagenEdu"
+                 placeholder="Imagen"
+                 required
+                 >
+             </div>
+        <div class="modal-footer">
+            <button
+            [disabled]="addForm.invalid"
+            type="submit"
+            class="btn btn-primary"
+            data-bs-dismiss="modal"
+            >
+            Guardar
+            </button>
+        </div>
+    </form>
+    </div>
+
+
+
+  
+
+
+<!--EDIT MODAL-->
+<div class="modal fade" id="editEducacionModal" tabindex="-1" aria-labelledby="editEducacionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateEducacionModalLabel">editar educacion{{ editarEducacion?.tituloEdu }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form #editForm="ngForm">
+                <div class ="form-group">
+                    <label for="tituloEdu">Titulo</label>
+                    <input type="text"
+                    ngModel="{{ editarEducacion?.tituloEdu}}"
+                    name="tituloEdu"
+                    class="form-control"
+                    id="tituloEdu"
+                    placeholder="Titulo"
+                    required
+                    >
+                </div>
+                <input
+                type="hidden"
+                ngModel="{{ editarEducacion?.idEdu }}"
+                name="idEdu"
+                class="form-control"
+                id="idEdu"
+                placeholder=""
+                />
+                <div class ="form-group">
+                 <label for="fechaEdu">Fecha</label>
+                 <input type="text"
+                 ngModel="{{ editarEducacion?.fechaEdu}}"
+                 name="fechaEdu"
+                 class="form-control"
+                 id="fechaEdu"
+                 placeholder="Fecha"
+                 required
+                 >
+             </div>
+             <div class ="form-group">
+                 <label for="descEdu">Descripción</label>
+                 <input type="text"
+                 ngModel="{{ editarEducacion?.descEdu}}"
+                 name="descEdu"
+                 class="form-control"
+                 id="descEdu"
+                 placeholder="Descripción"
+                 required
+                 >
+             </div>
+             <div class ="form-group">
+                 <label for="imagenEdu">Imagen URL</label>
+                 <input type="text"
+                 ngModel="{{editarEducacion?.imagenEdu}}"
+                 name="imagenEdu"
+                 class="form-control"
+                 id="imagenEdu"
+                 placeholder="Imagen"
+                 required
+                 >
+             </div>
+        <div class="modal-footer">
+            <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+            >
+            Cerrar
+            </button>
+            <button
+            (click)="onUpdateEducacion(editForm.value)"
+            data-bs-dismiss="modal"
+            class="btn btn-primary"
+            >
+            Añadir cambios
+            </button>
+        </div>
+    </form>
+</div>
+
+    <!--MODAL DELETE-->
+    <div class="modal fade" id="deleteEducacionModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel">Eliminar Educacion</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Seguro que quieres eliminar la educacion {{borrarEducacion?.tituloEdu}}?
+                </p>
+            <div class="modal-footer">
+                <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                >
+                No
+                </button>
+                <button
+                (click)="onDeleteEducacion(borrarEducacion!.idEdu)"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+                >
+                Si</button>
+
+            </div>
+        </div>
+    

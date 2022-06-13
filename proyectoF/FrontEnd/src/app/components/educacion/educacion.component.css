@@ -9,3 +9,9 @@ div{
 h1 ,  h3{
     display: inline;
 }
+.botones{
+    display: flex;
+    margin-left: 25%;
+  
+   
+}
