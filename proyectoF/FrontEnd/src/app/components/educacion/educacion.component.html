@@ -1,17 +1,12 @@
+<h1>Educaciones</h1>
 <!--BOTONES-->
 <div class="botones">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#editEducacionModal">
-        Editar
+  
+       <button type="button" class="btn btn-danger" (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addEducacionModal">
+        Añadir Educacion
        </button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"  data-bs-target="#deleteEducacionModal">
-        Eliminar Educacion
-     </button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#addEducacionModal">
-    Añadir Educacion
-   </button>
 </div>
 <div class="row" *ngFor="let educacion of educaciones">
-    <h1>Educacion</h1>
     <div class="col-lg-1"></div>
     <div class="col-lg-11">
         <ul>
@@ -21,9 +16,15 @@
             <p>{{educacion.descEdu}}</p>
             <p><img src="{{educacion.imagenEdu}}"></p>
         </ul>
-    <div class="col text-center">
+        <div class="col text-center">
+            <button type="button" class="btn btn-primary" (click)="onOpenModal('edit', educacion)" data-bs-toggle="modal" data-bs-target="#editarEducacionModal">
+                Editar
+               </button>
+               <button type="button" class="btn btn-primary" (click)="onOpenModal('delete', educacion)" data-bs-toggle="modal" data-bs-target="#borrarEducacionModal">
+                borrar
+               </button>
     </div>
-</div>
+    </div>
 
 
 <!---MODAL DE AÑADIR EDUCACION-->
@@ -93,6 +94,9 @@
         </div>
     </form>
     </div>
+      </div>
+      </div>
+    </div>
 
 
 
@@ -100,11 +104,11 @@
 
 
 <!--EDIT MODAL-->
-<div class="modal fade" id="editEducacionModal" tabindex="-1" aria-labelledby="editEducacionModalLabel" aria-hidden="true">
+<div class="modal fade" id="editarEducacionModal" tabindex="-1" aria-labelledby="editarEducacionModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="updateEducacionModalLabel">editar educacion{{ editarEducacion?.tituloEdu }}</h5>
+          <h5 class="modal-title" id="editarEducacionModalLabel">Editar educacion {{ editarEducacion?.tituloEdu }}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -179,13 +183,17 @@
         </div>
     </form>
 </div>
+</div>
+</div>
+</div>
+
 
     <!--MODAL DELETE-->
-    <div class="modal fade" id="deleteEducacionModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal fade" id="borrarEducacionModal" tabindex="-1" aria-labelledby="borrarModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="deleteModalLabel">Eliminar Educacion</h5>
+              <h5 class="modal-title" id="borrarModalLabel">Eliminar Educacion</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -209,4 +217,10 @@
 
             </div>
         </div>
+    </div>
+</div>
+</div>
+
     
+
+     
