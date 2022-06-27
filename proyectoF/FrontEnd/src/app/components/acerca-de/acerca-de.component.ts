@@ -28,5 +28,33 @@ export class AcercaDeComponent implements OnInit {
       }
     })
   }
+  public onOpenModal(mode:String, usuario?: Usuario):void{
+    const container=document.getElementById('main-container');
+    const button=document.createElement('button');
+    button.style.display='none';
+    button.setAttribute('data-toggle', 'modal');
+    if(mode==='edit'){
+      this.editUsuario=usuario;
+      button.setAttribute('data-target','#editarUsuarioModal');
+    } 
+    container?.appendChild(button);
+    button.click();
+    
+    }
+  
+  public onUpdateUser(usuario: Usuario){
+    this.editUsuario=usuario;
+    document.getElementById('add-usuario-form')?.click();
+    this.headerService.updateUsuario(usuario).subscribe({
+      next: (response:Usuario) =>{
+        console.log(response);
+        this.getUser();
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+        
+      }
+    })
+  }
 
 }
