@@ -3,6 +3,7 @@ package com.portfolio.miqueasrodriguez.Controlador;
 
 import com.portfolio.miqueasrodriguez.Entidad.Skills;
 import com.portfolio.miqueasrodriguez.Servicio.SkillsService;
+import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -28,10 +29,10 @@ public class SkillsController {
 
   
    
-    @GetMapping("/id/{id}")
-    public ResponseEntity<Skills>obtenerEducacion(@PathVariable("id") Long id){
-        Skills skills=skillsService.buscarSkillsPorId(id);
-        return new ResponseEntity<>(skills,HttpStatus.OK);
+    @GetMapping("/all")
+    public ResponseEntity<List<Skills>>obtenerSkills(){
+        List<Skills> educacion=skillsService.buscarSkills();
+        return new ResponseEntity<>(educacion,HttpStatus.OK);
     }
     @PutMapping("/update")
     public ResponseEntity<Skills>editarSkills(@RequestBody Skills skills){

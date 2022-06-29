@@ -2,3 +2,9 @@
     background-color: #ffffff;
     padding: 20px;
 }
+.botones{
+    display: flex;
+    margin-left: 25%;
+  
+   
+}
