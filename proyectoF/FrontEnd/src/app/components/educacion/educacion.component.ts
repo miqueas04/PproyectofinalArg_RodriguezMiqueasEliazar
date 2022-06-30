@@ -40,7 +40,8 @@ button.style.display='none';
 button.setAttribute('data-toggle', 'modal');
 if(mode==='add'){
   button.setAttribute('data-target', '#addEducacionModal');
-} else if(mode==='delete'){
+}
+ else if(mode==='delete'){
   this.borrarEducacion=educacion;
   button.setAttribute('data-target','#borrarEducacionModal');
 }else if(mode==='edit'){
