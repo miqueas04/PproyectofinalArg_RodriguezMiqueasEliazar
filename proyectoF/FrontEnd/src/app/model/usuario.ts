@@ -5,4 +5,5 @@ export interface Usuario{
     titulo:string;
     descripcion: string;
     fotoPerfil: string;
+    banner: string;
 }

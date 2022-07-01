@@ -22,13 +22,15 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(Long id, String nombre,String descripcion, String apellido, String titulo, String fotoPerfil) {
+    public Usuario(Long id, String nombre,String descripcion, String apellido, String titulo, String fotoPerfil, String banner) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.apellido = apellido;
         this.titulo = titulo;
         this.fotoPerfil = fotoPerfil;
+        this.banner = fotoPerfil;
+        
     }
 
     
@@ -56,6 +58,8 @@ public class Usuario implements Serializable {
      
      
     private String fotoPerfil;
+    
+    private String banner;
     
     @OneToMany(fetch= FetchType.LAZY, mappedBy ="idEdu")
     private List<Educacion>educacionList;

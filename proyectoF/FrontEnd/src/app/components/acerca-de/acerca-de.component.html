@@ -89,10 +89,20 @@
             placeholder="titulo"
             required
             >
-        </div>
-           
+        </div> 
+        <div class ="form-group">
+          <label for="banner">banner Url</label>
+          <input type="text"
+          ngModel="{{ editUsuario?.banner}}"
+          name="banner"
+          class="form-control"
+          id="banner"
+          placeholder="banner"
+          required
+          >
+      </div>
            <div class ="form-group">
-               <label for="fotoPerfil">Imagen URL</label>
+               <label for="fotoPerfil">foto Perfil Url</label>
                <input type="text"
                ngModel="{{editUsuario?.fotoPerfil}}"
                name="fotoPerfil"
