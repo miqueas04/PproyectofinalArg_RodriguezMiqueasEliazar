@@ -1,10 +1,15 @@
-<h1>Proyectos realizados</h1>
+<div class="row">
+    <h1>Proyectos realizados</h1>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
 <div class="botones">
     <button type="button" class="btn btn-danger" (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addProyectosModal">
      Añadir Proyecto
     </button>
 </div>
 <div class="row" *ngFor="let proyecto of proyectos">
+    <div class="card bg-light caja" style="width:75%;">
+        <div class="card-header">
     <div class="contenedor">
         <div class="col-sm-12 col-md-7 col-lg-7 parte1">
          <h2>{{proyecto.nombre}}</h2>
@@ -23,10 +28,12 @@
                </button>
                  
     </div>
-        </div>
     </div>
-</div>
-
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 <!---MODAL DE AÑADIR EDUCACION-->
 
 <div class="modal fade" id="addProyectosModal" tabindex="-1" aria-labelledby="addProyectosModalLabel" aria-hidden="true">

@@ -1,5 +1,7 @@
-<h1>Educaciones</h1>
-<!--BOTONES-->
+<div class="row">
+    <h1>Educaciones</h1>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
 <div class="botones">
     <button type="button" class="btn btn-danger" (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addEducacionModal">
      Añadir Educacion
@@ -7,6 +9,8 @@
 </div>
 
 <div class="row" *ngFor="let educacion of educaciones">
+    <div class="card bg-light caja" style="width:75%;">
+        <div class="card-header">
     <div class="col-lg-1"></div>
     <div class="col-lg-11">
         <ul>
@@ -27,6 +31,9 @@
                  
     </div>
     </div>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -226,4 +233,3 @@
 
     
 
-     

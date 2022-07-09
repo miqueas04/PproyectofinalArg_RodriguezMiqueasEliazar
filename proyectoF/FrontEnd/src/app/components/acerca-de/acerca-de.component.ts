@@ -27,6 +27,7 @@ export class AcercaDeComponent implements OnInit {
         alert(error.message);
       }
     })
+    
   }
   public onOpenModal(mode:String, usuario?: Usuario):void{
     const container=document.getElementById('main-container');
@@ -49,11 +50,14 @@ export class AcercaDeComponent implements OnInit {
       next: (response:Usuario) =>{
         console.log(response);
         this.getUser();
+        window.location.reload();
+  
       },
       error:(error:HttpErrorResponse)=>{
         alert(error.message);
         
       }
+      
     })
   }
 
