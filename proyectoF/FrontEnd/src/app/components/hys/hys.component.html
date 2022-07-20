@@ -1,10 +1,10 @@
 <div class="row">
-  <h1>Experiencia laboral</h1>
+  <h1>Hard and soft skills</h1>
   <div class="col-lg-1"></div>
   <div class="col-lg-11">
 
 <div class="botones">
-  <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#addSkillModal">
+  <button type="button" class="btn btn-dark"  *ngIf="isLogged" data-bs-toggle="modal" data-bs-target="#addSkillModal">
    Añadir Skills
   </button>
 </div>
@@ -34,11 +34,11 @@
         ></circle-progress>
       
       <div class="col text-center">
-        <button type="button" class="btn btn-primary"  (click)="onOpenModal('edit', skill)" data-bs-toggle="modal" data-bs-target="#editarSkillModal">
+        <button type="button" class="btn btn-primary" *ngIf="isLogged" (click)="onOpenModal('edit', skill)" data-bs-toggle="modal" data-bs-target="#editarSkillModal">
             <i class="fa fa-pencil"></i>
            </button>
            
-           <button type="button" class="btn btn-secondary" (click)="onOpenModal('delete', skill)" data-bs-toggle="modal" data-bs-target="#borrarSkillModal">
+           <button type="button" class="btn btn-secondary"  *ngIf="isLogged" (click)="onOpenModal('delete', skill)" data-bs-toggle="modal" data-bs-target="#borrarSkillModal">
             <i class="fa fa-times"></i>
            </button>
 </div>

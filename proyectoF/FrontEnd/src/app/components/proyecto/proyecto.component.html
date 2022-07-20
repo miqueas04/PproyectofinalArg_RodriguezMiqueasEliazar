@@ -3,7 +3,7 @@
     <div class="col-lg-1"></div>
     <div class="col-lg-11">
 <div class="botones">
-    <button type="button" class="btn btn-danger" (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addProyectosModal">
+    <button type="button" class="btn btn-dark" *ngIf="isLogged" (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addProyectosModal">
      Añadir Proyecto
     </button>
 </div>
@@ -19,11 +19,11 @@
          <img src="{{proyecto.imagen}}" class="img-fluid img-proyecto">
          <div class="col text-center">
             
-            <button type="button" class="btn btn-primary" (click)="onOpenModal('edit', proyecto)" data-bs-toggle="modal" data-bs-target="#editarProyectosModal">
+            <button type="button" class="btn btn-primary" *ngIf="isLogged" (click)="onOpenModal('edit', proyecto)" data-bs-toggle="modal" data-bs-target="#editarProyectosModal">
                 <i class="fa fa-pencil"></i>
                </button>
                
-               <button type="button" class="btn btn-secondary" (click)="onOpenModal('delete', proyecto)" data-bs-toggle="modal" data-bs-target="#borrarProyectosModal">
+               <button type="button" class="btn btn-secondary" *ngIf="isLogged" (click)="onOpenModal('delete', proyecto)" data-bs-toggle="modal" data-bs-target="#borrarProyectosModal">
                 <i class="fa fa-times"></i>
                </button>
                  

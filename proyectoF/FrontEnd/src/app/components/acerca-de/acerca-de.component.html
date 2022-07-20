@@ -1,5 +1,5 @@
 <div class="col text-center">
-  <button type="button" class="btn btn-primary" (click)="onOpenModal('edit', usuario)" data-bs-toggle="modal" data-bs-target="#editarUsuarioModal">
+  <button type="button" class="btn btn-primary" *ngIf="isLogged" (click)="onOpenModal('edit', usuario)" data-bs-toggle="modal" data-bs-target="#editarUsuarioModal">
       <i class="fa fa-pencil"></i>
      </button>
      </div>

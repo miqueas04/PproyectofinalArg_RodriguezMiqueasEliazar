@@ -6,10 +6,11 @@
 <div class="redes"> 
     <a href="http://"><img src="../../../assets/linkedin.png" id="linkedin"></a>
     <a href="http://"><img src="../../../assets/twitter.png" id="twitter"></a>
-    <a href="http://"><img src="../../../assets/facebook.png" id="facebook"></a>
-    <a href="http://"><img src="../../../assets/instagram.png" id="instagram"></a>
-    <a href="http://"><img src="../../../assets/github.png" id="github"></a>
-    <button type="button" class="btn btn-outline-light" (click)="login()">INGRESAR</button>
+    <a href="https://www.facebook.com/mikii.rodriguezz"><img src="../../../assets/facebook.png" id="facebook"></a>
+    <a href="https://www.instagram.com/miquease.rodriguez"><img src="../../../assets/instagram.png" id="instagram"></a>
+    <a href="https://github.com/miqueas04"><img src="../../../assets/github.png" id="github"></a>
+    <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">INGRESAR</button>
+    <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">SALIR DE LA SESSION</button>
 </div> 
 </div>
 </div>

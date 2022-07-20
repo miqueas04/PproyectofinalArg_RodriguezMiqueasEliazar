@@ -29,7 +29,7 @@ public class Usuario implements Serializable {
         this.apellido = apellido;
         this.titulo = titulo;
         this.fotoPerfil = fotoPerfil;
-        this.banner = fotoPerfil;
+        this.banner = banner;
         
     }
 

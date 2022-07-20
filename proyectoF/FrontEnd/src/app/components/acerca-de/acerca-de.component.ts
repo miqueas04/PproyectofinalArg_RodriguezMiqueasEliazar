@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/model/usuario';
 import { HeaderService } from 'src/app/service/acerdade.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -12,10 +13,19 @@ export class AcercaDeComponent implements OnInit {
   public usuario: Usuario | undefined;
   public editUsuario: Usuario | undefined;
 
-  constructor(private headerService : HeaderService) { }
+  constructor(private headerService : HeaderService, private tokenService : TokenService) { }
+
+  isLogged = false;
+
 
   ngOnInit(): void {
  this.getUser();
+ if(this.tokenService.getToken()){
+  this.isLogged = true;
+ }else{
+  this.isLogged = false;
+ }
+
   }
  
   public getUser():void{
