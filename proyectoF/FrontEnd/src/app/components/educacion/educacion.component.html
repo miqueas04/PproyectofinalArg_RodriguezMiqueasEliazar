@@ -3,7 +3,7 @@
     <div class="col-lg-1"></div>
     <div class="col-lg-11">
 <div class="botones">
-    <button type="button" class="btn btn-dark" *ngIf="isLogged" (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addEducacionModal">
+    <button type="button" class="btn btn-dark"  (click)="onOpenModal('add')" data-bs-toggle="modal" data-bs-target="#addEducacionModal">
      Añadir Educacion
     </button>
 </div>
@@ -21,11 +21,11 @@
             <p><img src="{{educacion.imagenEdu}}" width="250px"></p>
         </ul>
         <div class="col text-center">
-            <button type="button" class="btn btn-primary" *ngIf="isLogged" (click)="onOpenModal('edit', educacion)" data-bs-toggle="modal" data-bs-target="#editarEducacionModal">
+            <button type="button" class="btn btn-primary"  (click)="onOpenModal('edit', educacion)" data-bs-toggle="modal" data-bs-target="#editarEducacionModal">
                 <i class="fa fa-pencil"></i>
                </button>
                
-               <button type="button" class="btn btn-secondary" *ngIf="isLogged" (click)="onOpenModal('delete', educacion)" data-bs-toggle="modal" data-bs-target="#borrarEducacionModal">
+               <button type="button" class="btn btn-secondary"  (click)="onOpenModal('delete', educacion)" data-bs-toggle="modal" data-bs-target="#borrarEducacionModal">
                 <i class="fa fa-times"></i>
                </button>
                  
