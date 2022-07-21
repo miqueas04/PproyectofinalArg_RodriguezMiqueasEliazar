@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { interceptorProvider } from './service/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+     interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
