@@ -1,5 +1,8 @@
 .row{
     background: #ffffff;
+   
+    text-shadow: 7px 4px 5px rgba(50, 62, 65, 0.884);
+    
 }
 footer{
     color: black;

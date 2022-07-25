@@ -1,8 +1,7 @@
 <div class="row">
-  <h1>Hard and soft skills</h1>
+  <h1>Habilidades blandas y duras</h1>
   <div class="col-lg-1"></div>
   <div class="col-lg-11">
-
 <div class="botones">
   <button type="button" class="btn btn-dark"  *ngIf="isLogged" data-bs-toggle="modal" data-bs-target="#addSkillModal">
    Añadir Skills
@@ -10,12 +9,8 @@
 </div>
 
 <div class="row" *ngFor="let skill of skills">
-  <div class="card bg-light caja" style="width:20rem;">
-    <div class="card-header">
-  <div class="col-lg-1"></div>
-  <div class="col-lg-11">
-      
-        <div class="text-center col-sm-4 col-md-4 col-lg-4"><circle-progress
+  <div class="text-center col-sm-4 col-md-4 col-lg-4">
+  <circle-progress
           [percent]="skill.porcentaje"
           [radius]="90"
           [showImage]="true"
@@ -27,7 +22,7 @@
           [titleFontSize]="'3em'"
           [outerStrokeWidth]="12"
           [innerStrokeWidth]="4"
-          [outerStrokeColor]="'blue'"
+          [outerStrokeColor]="'grey'"
           [innerStrokeColor]="'black'"
           [animation]="true"
           [animationDuration]="500"
@@ -43,11 +38,11 @@
            </button>
 </div>
 </div>
-  </div>
 </div>
 </div>
 </div>
-</div>
+
+
 
   
 <!--MODAL AÑADIR-->
@@ -217,21 +212,3 @@
 
 
 
-
-   <!-- <div class="text-center col-sm-4 col-md-4 col-lg-4"><circle-progress
-      [percent]="90"
-      [radius]="100"
-      [showImage]="true"
-      [imageSrc]="'../assets/html.png'"
-      [imageHeight]="70"
-      [imageWidth]="65"
-      [showUnits]="false"
-      [showSubtitle]="false"
-      [titleFontSize]="'3em'"
-      [outerStrokeWidth]="12"
-      [innerStrokeWidth]="4"
-      [outerStrokeColor]="'blue'"
-      [innerStrokeColor]="'black'"
-      [animation]="true"
-      [animationDuration]="1000"
-    ></circle-progress> -->

@@ -1,12 +1,14 @@
 .row{
     padding: 20px;
-    
+    text-shadow: 7px 4px 5px rgba(50, 62, 65, 0.884);
 }
 div{
     
     text-align: center;
 }
-
+h1{
+    text-shadow: 7px 4px 5px rgba(50, 62, 65, 0.884);
+}
 #nombre{
     font-weight: bold;
     margin-top: 10%;

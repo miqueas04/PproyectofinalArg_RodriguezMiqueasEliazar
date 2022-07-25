@@ -4,8 +4,12 @@
 }
 
 
-h1 ,  h3{
+h1 ,  h3, h2{
     display: inline;
+	
+}
+h1{
+	text-shadow: 7px 4px 5px rgba(50, 62, 65, 0.884);
 }
 .botones{
     display: flex;
